@@ -57,7 +57,7 @@ export const getCategoriesAndDocuments = async() => {
   return categoryMap;
 }
 
-export const createUserDocumentFromAuth = async (userAuth, additionalInformation={displayName: ''}) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation={}) => {
   if(!userAuth) return;
   const userDocRef = doc(db, 'users', userAuth.uid);
   

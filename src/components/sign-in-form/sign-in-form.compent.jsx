@@ -10,17 +10,16 @@ const defaultFormFields = {
     password: '',
 };
 
-const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
-}
-
 const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
+    }
+
+    const logGoogleUser = async () => {
+        await signInWithGooglePopup();
     }
 
     const handleSubmit = async (event) => {
